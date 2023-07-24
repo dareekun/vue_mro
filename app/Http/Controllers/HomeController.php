@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
 
     public function product() {
-        return inertia::render('Product');
+        return inertia::render('Products');
     }
 
     public function supplier() {

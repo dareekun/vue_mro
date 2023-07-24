@@ -1,11 +1,10 @@
 <script setup>
 import { Head, Link, router } from '@inertiajs/vue3';
 import LogoWhite from '@/Components/LogoWhite.vue';
-import { all } from 'axios';
-import axios from 'axios';
 
 defineProps({
     title: String,
+    user: Object,
 });
 
 const logout = () => {
@@ -59,9 +58,9 @@ const logout = () => {
                         class="flex w-full justify-between dark:text-white hover:text-white hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white cursor-pointer items-center py-3 px-8">
                         <div class="flex items-center">
                             <div class="w-8 text-center">
-                                <i class="fa-light fa-hand-holding-box"></i>
+                                <i class="fa-light fa-sack-dollar"></i>
                             </div>
-                            <span class="text-sm ml-2">Request</span>
+                            <span class="text-sm ml-2">Budget</span>
                         </div>
                     </li>
                     </Link>
@@ -103,8 +102,7 @@ const logout = () => {
             <div class="flex h-full items-end mt-4 mb-4 px-8">
                 <div class="flex items-center">
                     <div class="w-10 h-10 bg-cover rounded-md mr-3">
-                        <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/avatars/a_5.png" alt=""
-                            class="rounded-full h-full w-full overflow-hidden shadow" />
+                        <img :src="$page.props.auth.user.profile_photo_url" :alt="$page.props.auth.user.name" class="rounded-full h-full w-full overflow-hidden shadow">
                     </div>
                     <a :href="route('profile.show')">
                         <p class="text-gray-600 dark:text-white text-sm font-medium">{{ $page.props.auth.user.name }}</p>
@@ -200,9 +198,9 @@ const logout = () => {
                         class="flex w-full justify-between dark:text-white hover:text-white hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white cursor-pointer items-center py-3 px-8">
                         <div class="flex items-center">
                             <div class="w-8 text-center">
-                                <i class="fa-light fa-hand-holding-box"></i>
+                                <i class="fa-light fa-sack-dollar"></i>
                             </div>
-                            <span class="text-sm ml-2">Request</span>
+                            <span class="text-sm ml-2">Budget</span>
                         </div>
                     </li>
                     </Link>
@@ -244,8 +242,7 @@ const logout = () => {
             <div class="flex grow items-end">
                 <div class="flex items-center mt-4 mb-4 px-8">
                     <div class="w-10 h-10 bg-cover rounded-md mr-3">
-                        <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/avatars/a_5.png" alt=""
-                            class="rounded-full h-full w-full overflow-hidden shadow" />
+                        <img :src="$page.props.auth.user.profile_photo_url" :alt="$page.props.auth.user.name" class="rounded-full h-full w-full overflow-hidden shadow">
                     </div>
                     <div>
                         <a :href="route('profile.show')">
@@ -269,7 +266,7 @@ const logout = () => {
                 </ul>
             </div>
         </div>
-        <div class="container mx-auto py-6 md:w-4/5 w-11/12 px-6">
+        <div class="mx-auto py-6 md:w-4/5 w-11/12 px-6">
             <slot />
         </div>
     </div>
