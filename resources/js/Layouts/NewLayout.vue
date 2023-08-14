@@ -126,7 +126,7 @@ const logout = () => {
         <!-- Batas Responsive -->
         <div class="w-64 z-40 fixed sm:relative min-h-screen bg-white dark:bg-gray-600 shadow flex flex-col sm:hidden transition duration-150 ease-in-out" id="mobile-nav">
             <div id="openSideBar"
-                class="hidden h-10 w-10 bg-white dark:bg-gray-600 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer"
+                class="h-10 w-10 bg-white dark:bg-gray-600 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer"
                 @click="sidebarHandler(true)">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon stroke-gray-900 dark:stroke-white icon-tabler icon-tabler-adjustments" width="20"
                     height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round"
