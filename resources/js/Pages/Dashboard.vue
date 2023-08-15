@@ -1,9 +1,9 @@
 <script setup>
-import NewLayout from '@/Layouts/NewLayout.vue';
+import UserLayout from '@/Layouts/DeveloperLayout.vue';
 </script>
 
 <template>
-    <NewLayout title="Dashboard">
+    <UserLayout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -241,5 +241,5 @@ import NewLayout from '@/Layouts/NewLayout.vue';
                 </div>
             </div>
         </div>
-    </NewLayout>
+    </UserLayout>
 </template>
